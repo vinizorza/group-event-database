@@ -10,7 +10,7 @@ pipeline {
         stage('Run docker container') {
             steps {
                 sh '''
-                    if docker ps | grep -q group-event-postgress
+                    if docker ps --all | grep -q group-event-postgress
                     then
                     	docker stop group-event-postgress
                     	docker container rm group-event-postgress
